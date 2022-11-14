@@ -102,39 +102,93 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
+1. Open Quartus II and select new project and choose the file location.
+2. Module Declaration. Module should have the file name.
+3. Declare Inputs and outputs.
+4. Use assign declaration and wire to define the functionality of logic circuits.
+5. End the program with endmodule.
+6. Run the program and choose RTL viewer to get RTL realization.
 
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: Kaushika.A
+RegisterNumber:  212221230048
+```
+## SR Flip Flop:
+```verilog
+module ex05a(s,r,clock,q,qbar);
+input s,r,clock;
+output q,qbar;
+wire x,y;
+nand(x,s,clock);
+nand(y,r,clock);
+nand(q,x,qbar);
+nand(qbar,y,q);
+endmodule
+```
+## D FLip Flop:
+```verilog
+module ex05b(D,Clock,Q,Qbar);
+input D,Clock;
+output Q,Qbar;
+assign Dbar = ~D;
+wire X,Y;
+nand (X,D,Clock);
+nand (Y,Dbar,Clock);
+nand (Q,X,Qbar);
+nand (Qbar,Y,Q);
+endmodule
+```
+## JK Flip Flop:
+```verilog
+module ex05c(J,K,Clock,Q,Qbar);
+input J,Clock,K;
+output Q,Qbar;
+wire S,R;
+nand (S,J,Clock,Qbar);
+nand (R,K,Clock,Q);
+nand (Q,S,Qbar);
+nand (Qbar,R,Q);
+endmodule
+```
+## T Flip Flop:
+```verilog
+module ex05d(T,Clock,Q,Qbar);
+input T,Clock;
+output Q,Qbar;
+wire A,B;
+nand (A,T,Clock,Qbar);
+nand (B,T,Clock,Q);
+nand (Q,A,Qbar);
+nand (Qbar,B,Q);
+endmodule
+```
+## Output:
+## SR Flip Flop:
+### RTL LOGIC FOR FLIPFLOP 
+![](rtlsr.png)
+### TIMING DIGRAMS FOR FLIP FLOP 
+![](srwave.png)
 
+## D Flip Flop:
+### RTL LOGIC FOR FLIPFLOP 
+![](drtl.png)
+### TIMING DIGRAMS FOR FLIP FLOP 
+![](dwave.png)
 
+## JK Flip Flop:
+### RTL LOGIC FOR FLIPFLOP 
+![](jkrlt.png)
+### TIMING DIGRAMS FOR FLIP FLOP 
+![](jkwave.png)
 
-
-
-
-### RTL LOGIC FOR FLIPFLOPS 
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR FLIP FLOPS 
-
-
-
-
-
-
-
-
+## T Flip Flop:
+### RTL LOGIC FOR FLIPFLOP 
+![](trlt.png)
+### TIMING DIGRAMS FOR FLIP FLOP 
+![](twave.png)
 ### RESULTS 
+All the flipflops are implemented using verilog and their functionality has been validated using their functional tables.
