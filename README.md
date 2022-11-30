@@ -1,9 +1,17 @@
+Exp: 05
+
+Date:27.09.2022
+
+
 # Experiment--05-Implementation-of-flipflops-using-verilog
-### AIM: To implement all the flipflops using verilog and validating their functionality using their functional tables
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
-### THEORY 
-SR Flip-Flop
+## AIM: 
+To implement all the flipflops using verilog and validating their functionality using their functional tables
+## HARDWARE REQUIRED:  
+– PC, Cyclone II , USB flasher
+## SOFTWARE REQUIRED:   
+Quartus prime
+## THEORY 
+### SR Flip-Flop
 SR flip-flop operates with only positive clock transitions or negative clock transitions. Whereas, SR latch operates with enable signal. The circuit diagram of SR flip-flop is shown in the following figure.
 
 ![image](https://user-images.githubusercontent.com/36288975/167910294-bb550548-b1dc-4cba-9044-31d9037d476b.png)
@@ -101,7 +109,7 @@ From the above characteristic table, we can directly write the next state equati
 Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
-### Procedure
+## Procedure
 1. Open Quartus II and select new project and choose the file location.
 2. Module Declaration. Module should have the file name.
 3. Declare Inputs and outputs.
@@ -111,7 +119,7 @@ Q(t+1)=T′Q(t)+TQ(t)′
 
 
 
-### PROGRAM 
+## PROGRAM 
 ```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: Kaushika.A
